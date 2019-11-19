@@ -1,0 +1,4 @@
+[submodule "politocean_common"]
+	path = politocean_common
+	url = git@github.com:PoliTOcean/politocean_common.git
+	branch = master
