@@ -95,6 +95,7 @@ public:
      */
     int getAxis(int axis);
     unsigned char getButton();
+    std::string getName();
 
     // Returns true is the thread is reading for joystick values
     bool isReading();

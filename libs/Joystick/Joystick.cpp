@@ -81,6 +81,11 @@ unsigned char Joystick::getButton()
     return button_;
 }
 
+std::string Joystick::getName()
+{
+    return name_of_joystick;
+}
+
 bool Joystick::isReading()
 {
     return isReading_;
