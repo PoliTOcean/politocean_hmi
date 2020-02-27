@@ -144,14 +144,13 @@ void Talker::startTalking(MqttClient &publisher, Listener &listener)
 
             Types::Vector<int> axes = listener.axes();
 
-            Types::Vector<int> atmega_axes = {
-                axes[XboxOneController::Axes::X],
-                axes[XboxOneController::Axes::Y],
-                axes[XboxOneController::Axes::V_UP] - axes[XboxOneController::Axes::V_DOWN],
-                axes[XboxOneController::Axes::YAW],
-                axes[XboxOneController::Axes::PITCH]};
+            Types::Vector<int> atmega = {
+                axes[XboxOneController::Axes::X],                                            // Commands::ATMega::Axes::X_AXIS
+                axes[XboxOneController::Axes::Y],                                            // Commands::ATMega::Axes::Y_AXIS
+                axes[XboxOneController::Axes::V_UP] - axes[XboxOneController::Axes::V_DOWN], // Commands::ATMega::Axes::Z_AXIS
+                axes[XboxOneController::Axes::YAW],                                          // Commands::ATMega::Axes::RZ_AXIS
+                axes[XboxOneController::Axes::PITCH]};                                       // Commands::ATMega::Axes::PITCH_AXIS
 
-            Types::Vector<int> atmega = atmega_axes;
             publisher.publish(Topics::AXES, atmega);
 
             if (axes[XboxOneController::Axes::WRIST] == 0)
