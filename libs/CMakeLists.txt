@@ -5,6 +5,7 @@ project(PolitoceanHmi)
 #add_subdirectory(name_of_directory)
 add_subdirectory(Joystick)
 add_subdirectory(Serial)
+#add_subdirectory(GigE)
 
 # Install and export (do not touch this part)
 install(
