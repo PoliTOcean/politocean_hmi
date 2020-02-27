@@ -26,6 +26,15 @@
 using namespace Politocean;
 using namespace Politocean::Constants;
 
+/*
+void signalHandler(int signum)
+{
+    std::cout << "Interrupt signal (" << signum << ") received." << std::endl;
+
+    exit(EXIT_SUCCESS);
+}
+*/
+
 /**************************************************************
  * Listener class for Joystick device
  *************************************************************/
@@ -161,6 +170,8 @@ bool Talker::isTalking()
 
 int main(int argc, const char *argv[])
 {
+    //signal(SIGINT, signalHandler);
+
     mqttLogger::setRootTag(argv[0]);
 
     // Create a publisher object and a talker.
