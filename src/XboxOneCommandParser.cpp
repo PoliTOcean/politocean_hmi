@@ -270,7 +270,7 @@ void Talker::startTalking(MqttClient &publisher, Listener &listener)
             case XboxOneController::Buttons::HAND_CLOSE:
                 if (button.getValue())
                 {
-                    publisher.publish(Topics::HAND_VELOCITY, std::to_string(INT_MAX));
+                    publisher.publish(Topics::HAND_VELOCITY, std::to_string(SHRT_MAX));
                     publisher.publish(Topics::HAND, Commands::Actions::START);
                 }
                 else
@@ -280,7 +280,7 @@ void Talker::startTalking(MqttClient &publisher, Listener &listener)
             case XboxOneController::Buttons::HAND_OPEN:
                 if (button.getValue())
                 {
-                    publisher.publish(Topics::HAND_VELOCITY, std::to_string(INT_MIN));
+                    publisher.publish(Topics::HAND_VELOCITY, std::to_string(SHRT_MIN));
                     publisher.publish(Topics::HAND, Commands::Actions::START);
                 }
                 else
